@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ExampleWidgets</string>
+    <string name="kotlin_widgets">Kotlin Widgets!</string>
+    <string name="enter_your_text_here">Enter your text here</string>
+    <string name="onclick_in_xml">onClick in XML</string>
+    <string name="onclicklistener_in_kotlin">onClickListener in kotlin</string>
+    <string name="red">Red</string>
+    <string name="green">Green</string>
+    <string name="blue">Blue</string>
+    <string name="white">Default</string>
+</resources>
