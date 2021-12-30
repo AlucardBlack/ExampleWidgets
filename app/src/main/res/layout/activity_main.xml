@@ -106,31 +106,28 @@
             android:id="@+id/football"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/football"
-            android:textSize="22sp"
             android:padding="10dp"
-            />
+            android:text="@string/football"
+            android:textSize="22sp" />
 
         <CheckBox
             android:id="@+id/hockey"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/hockey"
-            android:textSize="22sp"
             android:padding="10dp"
-            />
+            android:text="@string/hockey"
+            android:textSize="22sp" />
 
         <Button
             android:id="@+id/buttonCB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/press_me"
-            android:textAllCaps="false"
             android:layout_gravity="center"
             android:layout_margin="20dp"
-            android:textSize="20sp"
             android:padding="10dp"
-            />
+            android:text="@string/press_me"
+            android:textAllCaps="false"
+            android:textSize="20sp" />
 
 
         <View
@@ -142,22 +139,21 @@
             android:id="@+id/ratingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:numStars="5"
-            android:stepSize="0.5"
-            android:rating="3"
             android:layout_gravity="center"
             android:layout_margin="20dp"
-            />
+            android:numStars="5"
+            android:rating="3"
+            android:stepSize="0.5" />
 
         <Button
             android:id="@+id/buttonRB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/press_me2"
-            android:padding="10dp"
-            android:textSize="16sp"
-            android:textAllCaps="false"
             android:layout_gravity="center"
+            android:padding="10dp"
+            android:text="@string/press_me2"
+            android:textAllCaps="false"
+            android:textSize="16sp"
 
             />
     </LinearLayout>

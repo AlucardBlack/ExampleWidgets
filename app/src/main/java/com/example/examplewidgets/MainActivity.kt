@@ -84,7 +84,8 @@ class MainActivity : AppCompatActivity() {
 
         buttonRatingBar.setOnClickListener {
             val ratingBarValue = ratingBar.rating
-            Toast.makeText(this@MainActivity, "Rating is $ratingBarValue",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@MainActivity, "Rating is $ratingBarValue", Toast.LENGTH_SHORT)
+                .show()
         }
 
     }
