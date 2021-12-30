@@ -1,88 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/back"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textHello"
+    <LinearLayout
+        android:id="@+id/back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/kotlin_widgets"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editTextDemo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:autofillHints="Text"
-        android:hint="@string/enter_your_text_here"
-        android:inputType="text"
-        android:padding="15dp" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:onClick="buttonFunction"
-        android:padding="20dp"
-        android:text="@string/onclick_in_xml"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        tools:ignore="UsingOnClickInXml" />
+        <TextView
+            android:id="@+id/textHello"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/kotlin_widgets"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:padding="20dp"
-        android:text="@string/onclicklistener_in_kotlin"
-        android:textAllCaps="false"
-        android:textSize="16sp" />
+        <EditText
+            android:id="@+id/editTextDemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:autofillHints="Text"
+            android:hint="@string/enter_your_text_here"
+            android:inputType="text"
+            android:padding="10dp" />
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="20dp">
-
-        <RadioButton
-            android:id="@+id/red"
+        <Button
+            android:id="@+id/button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/red"
-            android:textSize="20sp" />
+            android:layout_gravity="center"
+            android:onClick="buttonFunction"
+            android:padding="10dp"
+            android:text="@string/onclick_in_xml"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            tools:ignore="UsingOnClickInXml" />
 
-        <RadioButton
-            android:id="@+id/green"
+        <Button
+            android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/green"
-            android:textSize="20sp" />
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:text="@string/onclicklistener_in_kotlin"
+            android:textAllCaps="false"
+            android:textSize="16sp" />
 
-        <RadioButton
-            android:id="@+id/blue"
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/blue"
-            android:textSize="20sp" />
+            android:padding="20dp">
 
-        <RadioButton
-            android:id="@+id/white"
+            <RadioButton
+                android:id="@+id/red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/red"
+                android:textSize="20sp" />
+
+            <RadioButton
+                android:id="@+id/green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/green"
+                android:textSize="20sp" />
+
+            <RadioButton
+                android:id="@+id/blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/blue"
+                android:textSize="20sp" />
+
+            <RadioButton
+                android:id="@+id/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/white"
+                android:textSize="20sp" />
+        </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
+        <CheckBox
+            android:id="@+id/football"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/white"
-            android:textSize="20sp" />
-    </RadioGroup>
-</LinearLayout>
+            android:text="@string/football"
+            android:textSize="22sp"
+            android:padding="10dp"
+            />
+
+        <CheckBox
+            android:id="@+id/hockey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hockey"
+            android:textSize="22sp"
+            android:padding="10dp"
+            />
+
+        <Button
+            android:id="@+id/buttonCB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/press_me"
+            android:textAllCaps="false"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:textSize="20sp"
+            android:padding="10dp"
+            />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="0.5"
+            android:rating="3"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            />
+
+        <Button
+            android:id="@+id/buttonRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/press_me2"
+            android:padding="10dp"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:layout_gravity="center"
+
+            />
+    </LinearLayout>
+
+</ScrollView>

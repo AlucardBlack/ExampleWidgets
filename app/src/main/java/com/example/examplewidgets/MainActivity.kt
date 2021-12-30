@@ -11,8 +11,6 @@ import android.widget.RadioGroup
 import android.widget.RadioButton
 
 
-
-
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,8 +42,8 @@ class MainActivity : AppCompatActivity() {
         val radioButton = findViewById<RadioGroup>(R.id.radioGroup) as RadioGroup
         val background = findViewById<LinearLayout>(R.id.back) as LinearLayout
 
-        radioButton.setOnCheckedChangeListener {group, checkedId ->
-            when(checkedId) {
+        radioButton.setOnCheckedChangeListener { group, checkedId ->
+            when (checkedId) {
                 R.id.red -> {
                     background.setBackgroundColor(Color.parseColor("#FF0000"))
                 }
@@ -55,11 +53,38 @@ class MainActivity : AppCompatActivity() {
                 R.id.blue -> {
                     background.setBackgroundColor(Color.parseColor("#0000FF"))
                 }
+                //check how to actually make it default, not just white
                 R.id.white -> {
                     background.setBackgroundColor(Color.parseColor("#FFFFFF"))
                 }
             }
 
+        }
+
+        //CheckBox code
+        val checkBoxButton = findViewById<Button>(R.id.buttonCB) as Button
+        val checkBox1 = findViewById<CheckBox>(R.id.football) as CheckBox
+        val checkBox2 = findViewById<CheckBox>(R.id.hockey) as CheckBox
+
+        checkBoxButton.setOnClickListener {
+            if (checkBox1.isChecked && checkBox2.isChecked) {
+                Toast.makeText(this@MainActivity, "Football and Hockey", Toast.LENGTH_SHORT).show()
+            } else if (checkBox1.isChecked) {
+                Toast.makeText(this@MainActivity, "Football", Toast.LENGTH_SHORT).show()
+            } else if (checkBox2.isChecked) {
+                Toast.makeText(this@MainActivity, "Hockey", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this@MainActivity, "You didn't select anything", Toast.LENGTH_SHORT)
+                    .show()
+            }
+        }
+//Rating Bar
+        val ratingBar = findViewById<RatingBar>(R.id.ratingBar) as RatingBar
+        val buttonRatingBar = findViewById<Button>(R.id.buttonRB) as Button
+
+        buttonRatingBar.setOnClickListener {
+            val ratingBarValue = ratingBar.rating
+            Toast.makeText(this@MainActivity, "Rating is $ratingBarValue",Toast.LENGTH_SHORT).show()
         }
 
     }
@@ -71,7 +96,6 @@ class MainActivity : AppCompatActivity() {
                 .show()
         }
     }
-
 
 
 }

@@ -8,4 +8,8 @@
     <string name="green">Green</string>
     <string name="blue">Blue</string>
     <string name="white">Default</string>
+    <string name="football">Football</string>
+    <string name="hockey">Hockey</string>
+    <string name="press_me">Press Me</string>
+    <string name="press_me2">Press Me</string>
 </resources>
