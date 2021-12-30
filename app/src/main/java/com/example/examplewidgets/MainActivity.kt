@@ -1,5 +1,7 @@
 package com.example.examplewidgets
 
+import android.annotation.SuppressLint
+import android.app.ProgressDialog
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,6 +11,8 @@ import android.view.View
 import android.widget.*
 import android.widget.RadioGroup
 import android.widget.RadioButton
+import androidx.appcompat.widget.SwitchCompat
+import com.google.android.material.switchmaterial.SwitchMaterial
 
 
 class MainActivity : AppCompatActivity() {
@@ -88,7 +92,52 @@ class MainActivity : AppCompatActivity() {
                 .show()
         }
 
+        //Spinner
+        val spinner = findViewById<Spinner>(R.id.spinner) as Spinner
+
+        val teams = arrayOf(
+            "Fiorentina",
+            "Uventus",
+            "Milan",
+            "Inter",
+            "Bologna",
+            "Udinese",
+            "Napoli",
+            "Atalanta"
+        )
+        val arrayAdapter =
+            ArrayAdapter(this@MainActivity, android.R.layout.simple_spinner_dropdown_item, teams)
+        spinner.adapter = arrayAdapter
+        //Switch
+        val switchBtn = findViewById<SwitchMaterial>(R.id.switchbutton) as SwitchMaterial
+        switchBtn.setOnClickListener {
+            if (switchBtn.isChecked)
+                Toast.makeText(this@MainActivity, "Switch ON", Toast.LENGTH_SHORT).show()
+            else
+                Toast.makeText(this@MainActivity, "Switch OFF", Toast.LENGTH_SHORT).show()
+        }
+
+        //Progress Bar
+        val progressBarHorizontal = findViewById<ProgressBar>(R.id.progressBar) as ProgressBar
+        val btnStart = findViewById<Button>(R.id.buttonStart) as Button
+
+        btnStart.setOnClickListener {
+            var barStatus = 0
+            Thread(Runnable {
+                while (barStatus < 100) {
+                    barStatus += 1
+                    try {
+                        Thread.sleep(20)
+                        progressBarHorizontal.setProgress(barStatus)
+                    } catch (exp: InterruptedException) {
+                        exp.printStackTrace()
+                    }
+                }
+            }).start()
+        }
     }
+
+
     //end of MainActivity
 
     fun buttonFunction(v: View) {
