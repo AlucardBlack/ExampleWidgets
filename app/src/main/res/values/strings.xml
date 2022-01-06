@@ -17,4 +17,9 @@
     <string name="previous">Previous</string>
     <string name="next">Next</string>
     <string name="text_switcher_example">Text Switcher Example</string>
+    <string name="enter_team_s_name">Enter team\'s name</string>
+    <string name="checkbox">Checkbox</string>
+    <string name="hockey1">Hockey</string>
+    <string name="football1">Football</string>
+    <string name="submit">Submit</string>
 </resources>

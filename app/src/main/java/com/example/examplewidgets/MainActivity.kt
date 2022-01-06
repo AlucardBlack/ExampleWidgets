@@ -2,6 +2,7 @@ package com.example.examplewidgets
 
 import android.graphics.Color
 import android.os.Bundle
+import android.telephony.SmsManager
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.Gravity
@@ -9,6 +10,7 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.switchmaterial.SwitchMaterial
+import java.lang.StringBuilder
 
 
 class MainActivity : AppCompatActivity() {
@@ -132,7 +134,7 @@ class MainActivity : AppCompatActivity() {
             }).start()
         }
 
-
+//AutoComplete
         val autoCompleteTextView: AutoCompleteTextView =
             findViewById<AutoCompleteTextView>(R.id.autoCompleteTV)
         val teamsArray = arrayOf(
@@ -153,6 +155,7 @@ class MainActivity : AppCompatActivity() {
             ArrayAdapter<String>(this@MainActivity, android.R.layout.simple_list_item_1, teamsArray)
         autoCompleteTextView.setAdapter(arrayAdapterTeams)
 
+        //TextSwitcher
         val textSwitcher: TextSwitcher = findViewById<TextSwitcher>(R.id.textSwitcher)
         val buttonNext: Button = findViewById<Button>(R.id.next)
         val buttonPrevious: Button = findViewById<Button>(R.id.prev)
@@ -188,21 +191,75 @@ class MainActivity : AppCompatActivity() {
                 textSwitcher.setText(textArray[position])
             }
         }
-    }
+
+        //Checked TextView
+
+        val checkedTextView: CheckedTextView = findViewById(R.id.checkedText)
+        checkedTextView.setOnClickListener {
+            checkedTextView.toggle()
+        }
+
+        //Toggle Button
 
 
-        //end of MainActivity
-
-        fun buttonFunction(v: View) {
-            if (v.id == R.id.button1) {
+        val toggleButton: ToggleButton = findViewById(R.id.toggleButton)
+        toggleButton.setOnClickListener {
+            if (toggleButton.isChecked) {
                 Toast.makeText(
                     this@MainActivity,
-                    "Using OnClick attribute in XML",
+                    "Toggle Button: - ${toggleButton.text}",
                     Toast.LENGTH_SHORT
-                )
-                    .show()
+                ).show()
+                val image = applicationContext.resources.getDrawable(R.drawable.ic_toggle_on)
+                image.setBounds(0, 0, 60, 60)
+                toggleButton.setCompoundDrawables(image, null, null, null)
+            } else {
+                Toast.makeText(
+                    this@MainActivity,
+                    "Toggle Button: - ${toggleButton.text}",
+                    Toast.LENGTH_SHORT
+                ).show()
+                val image = applicationContext.resources.getDrawable(R.drawable.ic_toggle_off)
+                image.setBounds(0, 0, 60, 60)
+                toggleButton.setCompoundDrawables(image, null, null, null)
             }
         }
 
-
+        //Custom Checkbox
+        val checkBoxHockey: CheckBox = findViewById(R.id.checkboxHockey)
+        val checkBoxFootball: CheckBox = findViewById(R.id.checkboxFootball)
+        val submitButton: Button = findViewById(R.id.submitButton)
+        submitButton.setOnClickListener {
+            val stringBuilder: StringBuilder = StringBuilder("")
+            if (checkBoxHockey.isChecked) {
+                val string1 = checkBoxHockey.text.toString()
+                stringBuilder.append(string1)
+            }
+            if (checkBoxFootball.isChecked) {
+                val string2 = checkBoxFootball.text.toString()
+                stringBuilder.append("\n" + string2)
+            }
+            if (stringBuilder != null && !stringBuilder.toString().equals("")) {
+                Toast.makeText(this@MainActivity, stringBuilder, Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(this@MainActivity, "Nothing was selected", Toast.LENGTH_LONG).show()
+            }
+        }
     }
+
+
+    //end of MainActivity
+
+    fun buttonFunction(v: View) {
+        if (v.id == R.id.button1) {
+            Toast.makeText(
+                this@MainActivity,
+                "Using OnClick attribute in XML",
+                Toast.LENGTH_SHORT
+            )
+                .show()
+        }
+    }
+
+
+}
