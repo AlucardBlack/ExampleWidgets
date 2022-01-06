@@ -13,4 +13,8 @@
     <string name="press_me">Press Me</string>
     <string name="press_me2">Press Me</string>
     <string name="start">Start</string>
+    <string name="text_you_can_type_n_nfiorentina_inter_milan_ajax_barcelona_real_madrid_chelsea_manchester_united_manchester_city_fc_shakhtar_dynamo_borussia">Text you can type \n\nFiorentina, Inter, Milan, Ajax, Barcelona, Real Madrid, Chelsea, Manchester United, Manchester City, FC Shakhtar, Dynamo, Borussia</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+    <string name="text_switcher_example">Text Switcher Example</string>
 </resources>

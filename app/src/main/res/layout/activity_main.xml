@@ -25,37 +25,6 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/editTextDemo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:autofillHints="Text"
-            android:hint="@string/enter_your_text_here"
-            android:inputType="text"
-            android:padding="10dp" />
-
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:onClick="buttonFunction"
-            android:padding="10dp"
-            android:text="@string/onclick_in_xml"
-            android:textAllCaps="false"
-            android:textSize="16sp"
-            tools:ignore="UsingOnClickInXml" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="10dp"
-            android:text="@string/onclicklistener_in_kotlin"
-            android:textAllCaps="false"
-            android:textSize="16sp" />
 
         <View
             android:layout_width="match_parent"
@@ -101,6 +70,39 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="?android:attr/listDivider" />
+
+
+        <EditText
+            android:id="@+id/editTextDemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:autofillHints="Text"
+            android:hint="@string/enter_your_text_here"
+            android:inputType="text"
+            android:padding="10dp" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="buttonFunction"
+            android:padding="10dp"
+            android:text="@string/onclick_in_xml"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            tools:ignore="UsingOnClickInXml" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:text="@string/onclicklistener_in_kotlin"
+            android:textAllCaps="false"
+            android:textSize="16sp" />
 
         <CheckBox
             android:id="@+id/football"
@@ -189,18 +191,66 @@
 
         <ProgressBar
             android:id="@+id/progressBar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:padding="10dp"/>
+            android:padding="10dp" />
 
         <Button
             android:id="@+id/buttonStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/start"
-            />
+            android:text="@string/start" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:completionThreshold="1" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/text_you_can_type_n_nfiorentina_inter_milan_ajax_barcelona_real_madrid_chelsea_manchester_united_manchester_city_fc_shakhtar_dynamo_borussia" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_switcher_example" />
+
+        <TextSwitcher
+            android:id="@+id/textSwitcher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp" />
+
+        <Button
+            android:id="@+id/prev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/previous" />
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/next" />
+
+
     </LinearLayout>
 
 

@@ -1,17 +1,13 @@
 package com.example.examplewidgets
 
-import android.annotation.SuppressLint
-import android.app.ProgressDialog
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.Gravity
 import android.view.View
 import android.widget.*
-import android.widget.RadioGroup
-import android.widget.RadioButton
-import androidx.appcompat.widget.SwitchCompat
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.switchmaterial.SwitchMaterial
 
 
@@ -25,18 +21,6 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this@MainActivity, "Kotlin Widgets", Toast.LENGTH_SHORT).show()
         }
 
-        val editText = findViewById<EditText>(R.id.editTextDemo) as EditText
-        editText.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(p0: Editable?) {}
-
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                val a: String = editText.text.toString()
-                Toast.makeText(this@MainActivity, a, Toast.LENGTH_SHORT).show()
-            }
-
-        })
 
         val buttonListener = findViewById<Button>(R.id.button2) as Button
         buttonListener.setOnClickListener {
@@ -65,6 +49,18 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        val editText = findViewById<EditText>(R.id.editTextDemo) as EditText
+        editText.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {}
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                val a: String = editText.text.toString()
+                Toast.makeText(this@MainActivity, a, Toast.LENGTH_SHORT).show()
+            }
+
+        })
         //CheckBox code
         val checkBoxButton = findViewById<Button>(R.id.buttonCB) as Button
         val checkBox1 = findViewById<CheckBox>(R.id.football) as CheckBox
@@ -135,17 +131,78 @@ class MainActivity : AppCompatActivity() {
                 }
             }).start()
         }
-    }
 
 
-    //end of MainActivity
+        val autoCompleteTextView: AutoCompleteTextView =
+            findViewById<AutoCompleteTextView>(R.id.autoCompleteTV)
+        val teamsArray = arrayOf(
+            "Fiorentina",
+            "Inter",
+            "Milan",
+            "Ajax",
+            "Barcelona",
+            "Real Madrid",
+            "Chelsea",
+            "Manchester United",
+            "Manchester City",
+            "FC Shakhtar",
+            "Dynamo",
+            "Borussia"
+        )
+        val arrayAdapterTeams =
+            ArrayAdapter<String>(this@MainActivity, android.R.layout.simple_list_item_1, teamsArray)
+        autoCompleteTextView.setAdapter(arrayAdapterTeams)
 
-    fun buttonFunction(v: View) {
-        if (v.id == R.id.button1) {
-            Toast.makeText(this@MainActivity, "Using OnClick attribute in XML", Toast.LENGTH_SHORT)
-                .show()
+        val textSwitcher: TextSwitcher = findViewById<TextSwitcher>(R.id.textSwitcher)
+        val buttonNext: Button = findViewById<Button>(R.id.next)
+        val buttonPrevious: Button = findViewById<Button>(R.id.prev)
+        val textArray = arrayOf(
+            "View #1",
+            "View #2",
+            "View #3",
+            "View #4",
+            "View #5",
+            "View #6",
+            "View #7",
+            "View #8"
+        )
+        var position: Int = -1
+        textSwitcher.setFactory(object : ViewSwitcher.ViewFactory {
+            override fun makeView(): View {
+                val textView = TextView(this@MainActivity)
+                textView.textSize = 20F
+                textView.gravity = Gravity.CENTER
+                return textView
+            }
+        })
+
+        buttonPrevious.setOnClickListener {
+            if (position > 0) {
+                position -= 1
+                textSwitcher.setText(textArray[position])
+            }
+        }
+        buttonNext.setOnClickListener {
+            if (position < textArray.size - 1) {
+                position += 1
+                textSwitcher.setText(textArray[position])
+            }
         }
     }
 
 
-}
+        //end of MainActivity
+
+        fun buttonFunction(v: View) {
+            if (v.id == R.id.button1) {
+                Toast.makeText(
+                    this@MainActivity,
+                    "Using OnClick attribute in XML",
+                    Toast.LENGTH_SHORT
+                )
+                    .show()
+            }
+        }
+
+
+    }
