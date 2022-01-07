@@ -145,7 +145,7 @@
             android:layout_margin="20dp"
             android:numStars="5"
             android:rating="3"
-            android:stepSize="0.5" />
+            android:stepSize="0.25" />
 
         <Button
             android:id="@+id/buttonRB"
@@ -219,6 +219,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:layout_margin="40dp"
             android:text="@string/text_you_can_type_n_nfiorentina_inter_milan_ajax_barcelona_real_madrid_chelsea_manchester_united_manchester_city_fc_shakhtar_dynamo_borussia" />
 
         <View
